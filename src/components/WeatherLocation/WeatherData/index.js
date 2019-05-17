@@ -13,20 +13,29 @@ import {
 
 import './styles.css';
 
-const WeatherData  = () => (
-  <div className="weatherDataCont">
+const WeatherData  = ({ data: { tempeture, weatherState, humidity, wind } }) => {
+  return (<div className="weatherDataCont">
     <WeatherTempeture
-        tempeture={20}
-        weatherState={CLOUD}
+        tempeture={tempeture}
+        weatherState={weatherState}
     />
-    <WeatherExtraInfo humidity={80} wind={"10 m/s"}/>
-  </div>
+    <WeatherExtraInfo humidity={humidity} wind={wind}/>
+  </div>);
 
-);
+};
+
+// WeatherData.propTypes = {
+//   humidity: PropTypes.number.isRequired,
+//   wind: PropTypes.string.isRequired,
+// };
 
 WeatherData.propTypes = {
-  humidity: PropTypes.number.isRequired,
-  wind: PropTypes.string.isRequired,
-};
+  data: PropTypes.shape({
+    tempeture: PropTypes.number.isRequired,
+    weatherState: PropTypes.string.isRequired,
+    humidity: PropTypes.string.isRequired,
+    wind: PropTypes.string.isRequired,
+  }),
+}
 
 export default WeatherData;
