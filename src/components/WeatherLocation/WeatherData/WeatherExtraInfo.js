@@ -11,10 +11,10 @@ const WeatherExtraInfo = ( {humidity, wind }) => (  //aquí se usa el destructur
 
 
 
-WeatherExtraInfo.propTypes = {
-    humidity: PropTypes.string.isRequired,
-    wind: PropTypes.string.isRequired,
-};
+// WeatherExtraInfo.propTypes = {
+//     humidity: PropTypes.string.isRequired,
+//     wind: PropTypes.string.isRequired,
+// };
 
 export default WeatherExtraInfo;
 
