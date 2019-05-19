@@ -40,9 +40,9 @@ const WeatherTempeture = ( {tempeture, weatherState }) => (
     </div>
 );
 
-WeatherTempeture.propTypes = {
-  tempeture: PropTypes.number.isRequired,
-  weatherState: PropTypes.string.isRequired,
-}
+// WeatherTempeture.propTypes = {
+//   tempeture: PropTypes.number.isRequired,
+//   weatherState: PropTypes.string.isRequired,
+// }
 
 export default WeatherTempeture
