@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; // importamos React esto nos va a permitir trabajar con las librerías de REact en este archivo
+import CircularProgress from '@material-ui/core/CircularProgress'
 import transformWeather from './../../services/transformWeather';
 import { api_weather } from './../../constants/api_url'; // se usa llaves porque no se exportó con default
 import Location from './Location';
@@ -86,6 +87,7 @@ class WeatherLocation extends Component {
 
         // });
     }
+
     render() {
         console.log("render")
         const { city, data } = this.state;
@@ -94,7 +96,7 @@ class WeatherLocation extends Component {
                 <Location city={city}></Location>
                 {data ?
                     <WeatherData data={data}></WeatherData> :
-                    "Cargando..."
+                    <CircularProgress size={50}/>
                 }
             </div> //cuerpo del componente
 
