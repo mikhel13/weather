@@ -1,14 +1,12 @@
 import React from 'react';
 import WeatherExtraInfo from './WeatherExtraInfo';
 import WeatherTempeture from './WeatherTempeture';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {
   SUN,
-  // CLOUD,
-  // CLOUDY,
-  // RAIN,
-  // SNOW,
-  // WINDY,
+  CLOUD,
+  RAIN,
+  SNOW,
 } from './../../../constants/weather'; // como buena practica es mejor importa una a una debido a que se usa nada más la que se va a utilizar
 
 import './styles.css';

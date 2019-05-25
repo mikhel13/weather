@@ -1,5 +1,7 @@
 import React, { Component } from 'react'; // importamos React esto nos va a permitir trabajar con las librerías de REact en este archivo
 import CircularProgress from '@material-ui/core/CircularProgress'
+import { PropTypes } from 'prop-types';
+import getUrlWeatherByCity from './../../services/getUrlWeatherByCity';
 import transformWeather from './../../services/transformWeather';
 import { api_weather } from './../../constants/api_url'; // se usa llaves porque no se exportó con default
 import Location from './Location';
@@ -10,11 +12,11 @@ import './styles.css';
 
 import {
     SUN,
-    // CLOUD,
-    // CLOUDY,
-    // RAIN,
-    // SNOW,
-    // WINDY,
+    CLOUD,
+    RAIN,
+    SNOW,
+    THUNDER,
+    DRIZZLE,
   } from './../../constants/weather';
 
 
@@ -44,10 +46,11 @@ const data = {
 
 
 class WeatherLocation extends Component {
-    constructor () {
-        super();
+    constructor (props) {
+        super(props);
+        const { city } = props;
         this.state = { //es el estado acutal del componente. Esto va aayudar que el componente se renderice
-            city: 'Buenos Aires',
+            city,
             data: null,
         };
         console.log("constructor")
@@ -66,6 +69,7 @@ class WeatherLocation extends Component {
 
 
     handlerUpdateClick = () => {
+        const api_weather = getUrlWeatherByCity(this.state.city);
         fetch(api_weather).then( resolve => {
 
             return resolve.json();
@@ -88,11 +92,15 @@ class WeatherLocation extends Component {
         // });
     }
 
+
+
     render() {
         console.log("render")
+        const { onWeatherLocationClick } = this.props;
         const { city, data } = this.state;
         return (
-            <div className="weatherLocationCont">
+            // onWeatherLocationCLick -> evento para hacer el burbujeo de eventos. Aqupi se captura/ Aquí es el ṕrimer nivel de burbujeo
+            <div className="weatherLocationCont" onClick={onWeatherLocationClick}  >
                 <Location city={city}></Location>
                 {data ?
                     <WeatherData data={data}></WeatherData> :
@@ -104,4 +112,8 @@ class WeatherLocation extends Component {
     }
 
 };
+WeatherLocation.propTypes = {
+    city: PropTypes.string.isRequired,
+    onWeatherLocationClick: PropTypes.func,
+}
 export default WeatherLocation; //se invoca para que esté disponible
