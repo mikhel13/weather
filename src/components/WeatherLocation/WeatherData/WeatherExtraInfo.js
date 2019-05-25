@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import './styles.css';
 const WeatherExtraInfo = ( {humidity, wind }) => (  //aquí se usa el destructuring
     <div className="weatherExtraInfoCont">
