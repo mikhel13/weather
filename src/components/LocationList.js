@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import WeatherLocation from './WeatherLocation';
+import './styles.css';
 
 
 // se le pasa el el evento a cada uno de los componentes de que genra por medio de map
@@ -25,9 +26,9 @@ const LocationList = ({ cities,onSelectedLocation  }) => {   // cuando se tiene 
   );
 
   return (
-  <div>
-    {srToComponents(cities)}
-  </div>
+    <div className="locationList">
+      {srToComponents(cities)}
+    </div>
   );
 };
 

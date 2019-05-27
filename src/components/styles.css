@@ -1,0 +1,12 @@
+/* .locationList{
+
+} */
+
+@media (max-width: 64em){
+  .locationList {
+    min-height: auto;
+    overflow: auto;
+    margin-bottom: 20px;
+
+  }
+}

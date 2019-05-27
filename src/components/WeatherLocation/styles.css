@@ -5,14 +5,23 @@
   padding-left: 10px;
   color: #888;
   line-height: 35px;
+  overflow: hidden;
 }
 
+/* con el white-space permite que no se quiebren los títulos */
 .locationCont h1 {
   margin: 0;
+  white-space: nowrap;
 }
 
+
+/* width: calc -> calcula el ancho de la pantalla menos el 20 px */
 .weatherLocationCont {
-  width: 400px;
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
+  min-width: 350px;
+  box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   padding: 25px;
   box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.75)
