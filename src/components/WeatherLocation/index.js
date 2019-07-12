@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; // importamos React esto nos va a permitir trabajar con las librerías de REact en este archivo
 import CircularProgress from '@material-ui/core/CircularProgress'
-import { PropTypes } from 'prop-types';
+// import { PropTypes } from 'prop-types';
 import getUrlWeatherByCity from './../../services/getUrlWeatherByCity';
 import transformWeather from './../../services/transformWeather';
 import { api_weather } from './../../constants/api_url'; // se usa llaves porque no se exportó con default
@@ -43,6 +43,13 @@ const data = {
 // );
 
 // pasar un components function a Class Component
+
+
+
+// export const api_key = "869b91cbed9e754e0e242f48342fcd0a"
+// export const url_base_weather = "https://api.openweathermap.org/data/2.5/forecast"
+
+
 
 
 class WeatherLocation extends Component {
@@ -112,8 +119,8 @@ class WeatherLocation extends Component {
     }
 
 };
-WeatherLocation.propTypes = {
-    city: PropTypes.string.isRequired,
-    onWeatherLocationClick: PropTypes.func,
-}
+// WeatherLocation.propTypes = {
+//     city: PropTypes.string.isRequired,
+//     onWeatherLocationClick: PropTypes.func,
+// }
 export default WeatherLocation; //se invoca para que esté disponible
